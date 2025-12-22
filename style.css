@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+color: #ecf0f1;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 10px;
+}
+
+.cv-container {
+    display: flex;
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sol Sidebar */
+.sidebar {
+    width: 75mm;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 12mm 6mm;
+    overflow: hidden;
+    height: 297mm;
+    flex-shrink: 0;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 5mm;
+}
+
+.profile-image {
+    width: 35mm;
+    height: 35mm;
+    border-radius: 50%;
+    margin: 0 auto 5mm;
+    overflow: hidden;
+    border: 2mm solid #7fb069;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-title {
+    background: #7fb069;
+    color: white;
+    padding: 2mm 4mm;
+    border-radius: 5mm;
+    font-weight: bold;
+    font-size: 9pt;
+    display: inline-block;
+}
+
+.contact-info {
+    margin-bottom: 5mm;
+}
+
+.contact-item {
+    margin-bottom: 3mm;
+    font-size: 9pt;
+}
+
+.contact-item .label {
+    display: inline-block;
+    width: 18mm;
+    font-weight: bold;
+}
+
+.contact-item .value {
+    color: #ecf0f1;
+    font-size: 8pt;
+}
+
+.section-title {
+    background: #7fb069;
+    color: white;
+    padding: 2mm 4mm;
+    border-radius: 5mm;
+    font-weight: bold;
+    font-size: 9pt;
+    text-align: center;
+    margin: 6mm 0 4mm 0;
+}
+
+.skills-section .skill-category {
+    margin-bottom: 4mm;
+}
+
+.skills-section h4 {
+    color: #7fb069;
+    font-size: 8pt;
+    margin-bottom: 1mm;
+}
+
+.skills-section p {
+    font-size: 7pt;
+    color: #bdc3c7;
+    line-height: 1.3;
+}
+
+.education-section .education-item {
+    margin-bottom: 4mm;
+}
+
+.education-section h4 {
+    color: #7fb069;
+    font-size: 8pt;
+    margin-bottom: 1mm;
+}
+
+.education-section p {
+    font-size: 7pt;
+    color: #bdc3c7;
+    margin-bottom: 1mm;
+}
+
+.education-section .date {
+    font-size: 7pt;
+    color: #95a5a6;
+}
+
+.language-section .language-item {
+    margin-bottom: 2mm;
+    font-size: 8pt;
+}
+
+.language-section .label {
+    display: inline-block;
+    width: 18mm;
+    font-weight: bold;
+}
+
+.language-section .value {
+    color: #ecf0f1;
+    font-size: 7pt;
+}
+
+.hobbies-section p {
+    font-size: 7pt;
+    color: #bdc3c7;
+    line-height: 1.3;
+    margin-bottom: 2mm;
+}
+
+/* Sağ İçerik Alanı */
+.main-content {
+    flex: 1;
+    width: 135mm;
+    padding: 12mm 8mm;
+    background: white;
+    overflow: hidden;
+    height: 297mm;
+}
+
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+
+.main-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.header {
+    margin-bottom: 5mm;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2mm;
+    letter-spacing: 1pt;
+}
+
+.header h2 {
+    font-size: 14pt;
+    color: #7f8c8d;
+    font-weight: normal;
+    margin-bottom: 5mm;
+}
+
+.status-badge {
+    background: #7fb069;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.summary-section {
+    margin-bottom: 5mm;
+}
+
+.summary-section p {
+    font-size: 9pt;
+    line-height: 1.4;
+    color: #555;
+    text-align: justify;
+}
+
+.section-title-main {
+    background: #7fb069;
+    color: white;
+    padding: 2mm 5mm;
+    border-radius: 5mm;
+    font-weight: bold;
+    font-size: 9pt;
+    display: inline-block;
+    margin: 6mm 0 4mm 0;
+}
+
+.experience-item {
+    margin-bottom: 5mm;
+    padding-bottom: 4mm;
+    border-bottom: 0.5pt solid #ecf0f1;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2mm;
+}
+
+.job-header h3 {
+    color: #2c3e50;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.job-header .date {
+    background: #ecf0f1;
+    color: #7f8c8d;
+    padding: 1mm 3mm;
+    border-radius: 3mm;
+    font-size: 7pt;
+    font-weight: bold;
+}
+
+.company {
+    color: #7fb069;
+    font-weight: bold;
+    font-size: 9pt;
+    margin-bottom: 1mm;
+}
+
+.location {
+    color: #95a5a6;
+    font-size: 7pt;
+    margin-bottom: 2mm;
+}
+
+.experience-item p {
+    font-size: 8pt;
+    line-height: 1.3;
+    color: #555;
+    text-align: justify;
+}
+
+.project-item {
+    margin-bottom: 4mm;
+    padding-bottom: 3mm;
+    border-bottom: 0.5pt solid #ecf0f1;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-item h3 {
+    color: #2c3e50;
+    font-size: 10pt;
+    margin-bottom: 2mm;
+}
+
+.project-item p {
+    font-size: 8pt;
+    line-height: 1.3;
+    color: #555;
+    margin-bottom: 2mm;
+}
+
+.footer-note {
+    margin-top: 4mm;
+    font-size: 8pt;
+    color: #7f8c8d;
+    text-align: center;
+    padding-top: 4mm;
+    border-top: 0.5pt solid #ecf0f1;
+}
+
+/* PDF İndirme Butonu */
+.pdf-download-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.pdf-download-btn button {
+    background: #7fb069;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.pdf-download-btn button:hover {
+    background: #6a9c56;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.pdf-download-btn button:active {
+    transform: translateY(0);
+}
+
+/* Yazdırma Ayarları - BASİT VE ETKİLİ */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+    
+    .pdf-download-btn {
+        display: none;
+    }
+    
+    .cv-container {
+        box-shadow: none;
+        margin: 0;
+    }
+    
+    .sidebar {
+        background: #2c3e50;
+    }
+}
