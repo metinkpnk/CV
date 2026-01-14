@@ -334,12 +334,14 @@ body {
     text-decoration: underline;
 }
 
-/* PDF İndirme Butonu */
+/* PDF İndirme ve Dil Değiştirme Butonları */
 .pdf-download-btn {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
+    display: flex;
+    gap: 10px;
 }
 
 .pdf-download-btn button {
@@ -363,6 +365,14 @@ body {
 
 .pdf-download-btn button:active {
     transform: translateY(0);
+}
+
+#langBtn {
+    background: #3498db;
+}
+
+#langBtn:hover {
+    background: #2980b9;
 }
 
 /* Yazdırma Ayarları - BASİT VE ETKİLİ */
