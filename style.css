@@ -3,17 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
-color: #ecf0f1;
+
+a {
+    color: #ecf0f1;
+    transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3730a3 100%);
     margin: 0;
-    padding: 10px;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 .cv-container {
@@ -22,20 +25,35 @@ body {
     height: 297mm;
     margin: 0 auto;
     background: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 /* Sol Sidebar */
 .sidebar {
     width: 75mm;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     color: white;
     padding: 12mm 6mm;
     overflow: hidden;
     height: 297mm;
     flex-shrink: 0;
+    position: relative;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -58,7 +76,28 @@ body {
     border-radius: 50%;
     margin: 0 auto 5mm;
     overflow: hidden;
-    border: 2mm solid #7fb069;
+    border: 3mm solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    position: relative;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #1e40af, #3730a3, #1d4ed8, #2563eb);
+    border-radius: 50%;
+    z-index: -1;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .profile-image img {
@@ -68,13 +107,15 @@ body {
 }
 
 .contact-title {
-    background: #7fb069;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
     color: white;
-    padding: 2mm 4mm;
-    border-radius: 5mm;
-    font-weight: bold;
+    padding: 3mm 5mm;
+    border-radius: 25px;
+    font-weight: 600;
     font-size: 9pt;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .contact-info {
@@ -98,14 +139,33 @@ body {
 }
 
 .section-title {
-    background: #7fb069;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
     color: white;
-    padding: 2mm 4mm;
-    border-radius: 5mm;
-    font-weight: bold;
+    padding: 3mm 5mm;
+    border-radius: 25px;
+    font-weight: 600;
     font-size: 9pt;
     text-align: center;
     margin: 6mm 0 4mm 0;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.section-title:hover::before {
+    left: 100%;
 }
 
 .skills-section .skill-category {
@@ -113,9 +173,10 @@ body {
 }
 
 .skills-section h4 {
-    color: #7fb069;
+    color: #1e40af;
     font-size: 8pt;
     margin-bottom: 1mm;
+    font-weight: 600;
 }
 
 .skills-section p {
@@ -129,9 +190,10 @@ body {
 }
 
 .education-section h4 {
-    color: #7fb069;
+    color: #1e40af;
     font-size: 8pt;
     margin-bottom: 1mm;
+    font-weight: 600;
 }
 
 .education-section p {
@@ -173,9 +235,21 @@ body {
     flex: 1;
     width: 135mm;
     padding: 12mm 8mm;
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     overflow: hidden;
     height: 297mm;
+    position: relative;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1" fill="rgba(30,64,175,0.05)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
 }
 
 .main-content::-webkit-scrollbar {
@@ -194,27 +268,50 @@ body {
 
 .header h1 {
     font-size: 24pt;
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 2mm;
     letter-spacing: 1pt;
+    position: relative;
 }
 
 .header h2 {
     font-size: 14pt;
-    color: #7f8c8d;
-    font-weight: normal;
+    color: #64748b;
+    font-weight: 500;
     margin-bottom: 5mm;
 }
 
 .status-badge {
-    background: #7fb069;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
     color: white;
-    padding: 6px 20px;
-    border-radius: 15px;
+    padding: 8px 24px;
+    border-radius: 25px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.status-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+}
+
+.status-badge:hover::before {
+    left: 100%;
 }
 
 .summary-section {
@@ -229,14 +326,33 @@ body {
 }
 
 .section-title-main {
-    background: #7fb069;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
     color: white;
-    padding: 2mm 5mm;
-    border-radius: 5mm;
-    font-weight: bold;
+    padding: 3mm 6mm;
+    border-radius: 25px;
+    font-weight: 600;
     font-size: 9pt;
     display: inline-block;
     margin: 6mm 0 4mm 0;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.section-title-main:hover::before {
+    left: 100%;
 }
 
 .experience-item {
@@ -257,23 +373,24 @@ body {
 }
 
 .job-header h3 {
-    color: #2c3e50;
+    color: #1e293b;
     font-size: 10pt;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .job-header .date {
-    background: #ecf0f1;
-    color: #7f8c8d;
-    padding: 1mm 3mm;
-    border-radius: 3mm;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    color: #475569;
+    padding: 2mm 4mm;
+    border-radius: 20px;
     font-size: 7pt;
-    font-weight: bold;
+    font-weight: 600;
+    border: 1px solid rgba(30, 64, 175, 0.1);
 }
 
 .company {
-    color: #7fb069;
-    font-weight: bold;
+    color: #1e40af;
+    font-weight: 600;
     font-size: 9pt;
     margin-bottom: 1mm;
 }
@@ -302,9 +419,10 @@ body {
 }
 
 .project-item h3 {
-    color: #2c3e50;
+    color: #1e293b;
     font-size: 10pt;
     margin-bottom: 2mm;
+    font-weight: 600;
 }
 
 .project-item p {
@@ -337,42 +455,61 @@ body {
 /* PDF İndirme ve Dil Değiştirme Butonları */
 .pdf-download-btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 30px;
     z-index: 1000;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .pdf-download-btn button {
-    background: #7fb069;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
     transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-download-btn button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.pdf-download-btn button:hover::before {
+    left: 100%;
 }
 
 .pdf-download-btn button:hover {
-    background: #6a9c56;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(30, 64, 175, 0.4);
 }
 
 .pdf-download-btn button:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
 #langBtn {
-    background: #3498db;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
 }
 
 #langBtn:hover {
-    background: #2980b9;
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
 }
 
 /* Yazdırma Ayarları - BASİT VE ETKİLİ */
