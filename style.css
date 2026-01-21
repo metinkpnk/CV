@@ -542,4 +542,17 @@ body {
     .sidebar {
         background: #2c3e50;
     }
+    
+    /* Mavi yazıları yazdırmada beyaz yap */
+    .skills-section h4,
+    .education-section h4,
+    .company {
+        color: white !important;
+    }
+    
+    /* Ana başlığı yazdırmada siyah yap */
+    .header h1 {
+        color: black !important;
+        -webkit-text-fill-color: black !important;
+    }
 }
