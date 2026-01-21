@@ -409,8 +409,8 @@ body {
 }
 
 .project-item {
-    margin-bottom: 2.5mm;
-    padding-bottom: 2mm;
+    margin-bottom: 3mm;
+    padding-bottom: 2.5mm;
     border-bottom: 0.5pt solid #ecf0f1;
 }
 
@@ -512,6 +512,68 @@ body {
     box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
 }
 
+/* Mobil Responsive Tasarım */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .cv-container {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        border-radius: 10px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .main-content {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .profile-image {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
+    }
+    
+    .header h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .header h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .pdf-download-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .pdf-download-btn button {
+        padding: 8px 15px;
+        font-size: 11px;
+    }
+}
+
 /* Yazdırma Ayarları - BASİT VE ETKİLİ */
 @media print {
     @page {
@@ -537,10 +599,42 @@ body {
     .cv-container {
         box-shadow: none;
         margin: 0;
+        width: 210mm !important;
+        height: 297mm !important;
+        flex-direction: row !important;
     }
     
     .sidebar {
         background: #2c3e50;
+        width: 75mm !important;
+        height: 297mm !important;
+        padding: 7mm 5mm !important;
+    }
+    
+    .main-content {
+        width: 135mm !important;
+        height: 297mm !important;
+        padding: 7mm 6mm !important;
+    }
+    
+    .profile-image {
+        width: 30mm !important;
+        height: 30mm !important;
+    }
+    
+    .header h1 {
+        font-size: 21pt !important;
+        text-align: left !important;
+    }
+    
+    .header h2 {
+        font-size: 12pt !important;
+        text-align: left !important;
+    }
+    
+    .job-header {
+        flex-direction: row !important;
+        align-items: center !important;
     }
     
     /* Mavi yazıları yazdırmada beyaz yap */
