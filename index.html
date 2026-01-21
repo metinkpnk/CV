@@ -20,6 +20,9 @@
         <button onclick="toggleLanguage()" id="langBtn">
             🌐 English
         </button>
+        <button onclick="togglePrintMode()" id="printModeBtn">
+            🎨 Renkli
+        </button>
     </div>
 
     <div class="cv-container">
@@ -191,6 +194,7 @@
 
     <script>
         let currentLang = 'tr';
+        let printMode = 'color'; // 'color' veya 'bw' (black-white)
 
         const translations = {
             tr: {
@@ -240,7 +244,8 @@
                 techStack: 'C#, .NET Framework, MS SQL Server, Entity Framework',
                 footerNote: 'Daha fazla için Github profilimi ziyaret edebilirsiniz:',
                 pdfBtn: '📄 PDF İndir',
-                langBtn: '🌐 English'
+                langBtn: '🌐 English',
+                printModeBtn: '🎨 Renkli'
             },
             en: {
                 title: 'Metin KEPENEK - Resume',
@@ -289,7 +294,8 @@
                 techStack: 'C#, .NET Framework, MS SQL Server, Entity Framework',
                 footerNote: 'For more, you can visit my Github profile:',
                 pdfBtn: '📄 Download PDF',
-                langBtn: '🌐 Türkçe'
+                langBtn: '🌐 Türkçe',
+                printModeBtn: '🎨 Colorful'
             }
         };
 
@@ -365,13 +371,30 @@
             // Butonlar
             document.getElementById('downloadBtn').textContent = t.pdfBtn;
             document.getElementById('langBtn').textContent = t.langBtn;
+            document.getElementById('printModeBtn').textContent = t.printModeBtn;
+        }
+
+        function togglePrintMode() {
+            printMode = printMode === 'color' ? 'bw' : 'color';
+            const btn = document.getElementById('printModeBtn');
+            const body = document.body;
+            
+            if (printMode === 'bw') {
+                body.classList.add('bw-mode');
+                btn.textContent = currentLang === 'tr' ? '⚫ S&B' : '⚫ B&W';
+            } else {
+                body.classList.remove('bw-mode');
+                btn.textContent = currentLang === 'tr' ? '🎨 Renkli' : '🎨 Colorful';
+            }
         }
 
         function downloadPDF() {
             const button = document.getElementById('downloadBtn');
             const langBtn = document.getElementById('langBtn');
+            const printBtn = document.getElementById('printModeBtn');
             button.style.display = 'none';
             langBtn.style.display = 'none';
+            printBtn.style.display = 'none';
 
             setTimeout(() => {
                 window.print();
@@ -379,6 +402,7 @@
                 setTimeout(() => {
                     button.style.display = 'block';
                     langBtn.style.display = 'block';
+                    printBtn.style.display = 'block';
                 }, 1000);
             }, 100);
         }

@@ -512,6 +512,72 @@ body {
     box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
 }
 
+#printModeBtn {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+}
+
+#printModeBtn:hover {
+    box-shadow: 0 12px 35px rgba(5, 150, 105, 0.4);
+}
+
+/* Siyah-Beyaz Yazdırma Modu */
+.bw-mode .sidebar {
+    background: linear-gradient(135deg, #374151, #4b5563) !important;
+}
+
+.bw-mode .contact-title,
+.bw-mode .section-title,
+.bw-mode .section-title-main,
+.bw-mode .status-badge {
+    background: linear-gradient(135deg, #374151, #4b5563) !important;
+    box-shadow: 0 4px 15px rgba(55, 65, 81, 0.4) !important;
+}
+
+.bw-mode .skills-section h4,
+.bw-mode .education-section h4,
+.bw-mode .company {
+    color: #374151 !important;
+}
+
+.bw-mode .header h1 {
+    background: linear-gradient(135deg, #374151, #4b5563) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.bw-mode .profile-image::before {
+    background: linear-gradient(45deg, #374151, #4b5563, #6b7280, #9ca3af) !important;
+}
+
+.bw-mode .pdf-download-btn button {
+    background: linear-gradient(135deg, #374151, #4b5563) !important;
+    box-shadow: 0 8px 25px rgba(55, 65, 81, 0.3) !important;
+}
+
+.bw-mode .pdf-download-btn button:hover {
+    box-shadow: 0 12px 35px rgba(55, 65, 81, 0.4) !important;
+}
+
+.bw-mode #langBtn {
+    background: linear-gradient(135deg, #6b7280, #9ca3af) !important;
+    box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3) !important;
+}
+
+.bw-mode #langBtn:hover {
+    box-shadow: 0 12px 35px rgba(107, 114, 128, 0.4) !important;
+}
+
+.bw-mode #printModeBtn {
+    background: linear-gradient(135deg, #6b7280, #9ca3af) !important;
+    box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3) !important;
+}
+
+.bw-mode #printModeBtn:hover {
+    box-shadow: 0 12px 35px rgba(107, 114, 128, 0.4) !important;
+}
+
 /* Mobil Responsive Tasarım */
 @media screen and (max-width: 768px) {
     body {
@@ -577,6 +643,11 @@ body {
     .pdf-download-btn button {
         padding: 8px 15px;
         font-size: 11px;
+    }
+    
+    #printModeBtn {
+        font-size: 10px;
+        padding: 6px 10px;
     }
 }
 
